@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="parent">
+   <div class="colors">
+    <span onclick="changeColor('#1dd1a1',this)" style="--clr:#1dd1a1;"></span>
+    <span onclick="changeColor('#ff6b6b',this)" style="--clr:#ff6b6b;"></span>
+    <span onclick="changeColor('#2e86de',this)" style="--clr:#2e86de;"></span>
+    <span onclick="changeColor('#f368e0',this)" style="--clr:#f368e0;"></span>
+    <span  onclick="changeColor('#ff9f43',this)" style="--clr:#ff9f43;"></span>
+   </div> 
+   <div class="box"></div>
+   </div>
+   <script>
+    let box=document.querySelector('.box')
+    function changeColor(color,element){
+        box.style.background=color;
+        document.querySelectorAll('span').forEach(function(item){
+            item.classList.remove('active')
+
+        });
+        element.target.classList.add('active');
+    }
+   </script>
+</body>
+</html>
